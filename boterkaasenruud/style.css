@@ -1,0 +1,13 @@
+.button-group button {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.player1 {
+  background-color: red;
+}
+
+.player2 {
+  background-color: blue;
+}
