@@ -40,7 +40,6 @@ $grid->turnOff();
 // Execute light plan
 lightPlan1();
 
-
 /**
  * Demo light plan 1: Change the lights rows by row. When the last row is reached, start over with the next color
  */

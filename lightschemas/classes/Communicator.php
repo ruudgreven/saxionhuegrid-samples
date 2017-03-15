@@ -28,7 +28,7 @@ class Communicator {
 	 * Change status of the whole grid
 	 */
 	public function updateGrid(Grid $grid) {
-		$this->executeRequest("/grid", "POST", $grid->toArray());
+		echo $this->executeRequest("/grid", "POST", $grid->toArray());
 	}
 
 	/**

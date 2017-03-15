@@ -12,10 +12,7 @@ class Grid {
 		$defaultLightSetting = new Light(0, 0);
 		$defaultLightSetting->setOn(false);
 
-		// Row 0 only has one light
-		$this->lights[] = array(clone $defaultLightSetting);
-
-		for ($y = 1; $y < 5; $y++) {
+		for ($y = 0; $y < 5; $y++) {
 			$newRow = array();
 			for ($x = 0; $x < 3; $x++) {
 				$newLight = clone $defaultLightSetting;
@@ -26,6 +23,9 @@ class Grid {
 			}
 			$this->lights[] = $newRow;
 		}
+
+		// Last row only has one light
+		$this->lights[] = array(clone $defaultLightSetting);
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Grid {
 	 */
 	public function changeRow($row, $settingsMap) {
 		for ($x=0; $x<count($this->lights[$row]); $x++) {
-			$this->changeOne($row, $x, $settingsMap);
+			$this->changeOne($x, $row, $settingsMap);
 		}
 	}
 
@@ -50,7 +50,7 @@ class Grid {
 	 */
 	public function changeColumn($column, $settingsMap) {
 		for ($y=0; $y<count($this->lights[1]); $y++) {
-			$this->changeOne($y, $column, $settingsMap);
+			$this->changeOne($column, $y, $settingsMap);
 		}
 	}
 
