@@ -123,5 +123,13 @@ class Grid {
 		}
 		return $rows;
 	}
+
+	public function getHeight() {
+		return count($this->lights);
+	}
+
+	public function getWidth($row) {
+		return count($this->lights[$row]);
+	}
 }
 ?>

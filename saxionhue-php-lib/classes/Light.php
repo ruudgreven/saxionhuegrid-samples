@@ -2,18 +2,45 @@
 require_once("Color.php");
 
 /**
- * Model for a single LED light
+ * Model for a single LED light in the saxion hue grid
  * Author: Evert Duipmans
  * Date: 13-03-2017
  */
 class Light {
+	/**
+	 * Position in the grid
+	 */
 	private $x = 0;
+
+	/**
+	 * Position in the grid
+	 */
 	private $y = 0;
+
+	/**
+	 * Brightness of the light (0..255)
+	 */
 	private $bri = 255;
+
+	/**
+	 * State of the light
+	 */
 	private $on = true;
+
+	/**
+	 * Fade duration for the light
+	 */
 	private $duration = 0;
+
+	/**
+	 * Current RGB color (color object)
+	 */
 	private $color;
 
+	/**
+	 * Create a light object that corresponds to a light in the Saxion Hue Grid.
+	 * By default full brightness, light on, no fade and color is black. Only x and y position are mandatory parameters
+	 */
 	function __construct($x, $y, $bri=255, $on=true, $duration=0, $color = null) {
 		$this->x = $x;
 		$this->y = $y;
@@ -52,6 +79,9 @@ class Light {
 					"color" => $this->color->toArray());
 	}
 
+	/**
+	 * Clones the light object
+	 */
 	public function __clone() {
 		return new Light($this->x, $this->y, $this->bri, $this->on, $this->duration, clone $this->color);
 	}
