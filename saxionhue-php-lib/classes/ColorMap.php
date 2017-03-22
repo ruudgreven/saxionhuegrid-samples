@@ -14,5 +14,13 @@ class ColorMap {
 		$rainbow[] = new Color(143, 0, 255);
 		return $rainbow;
 	}
+
+	public static function rgb() {
+		$colors = array();
+		$colors[] = new Color(255, 0, 0);
+		$colors[] = new Color(0, 255, 0);
+		$colors[] = new Color(0, 0, 255);
+		return $colors;
+	}
 }
 ?>

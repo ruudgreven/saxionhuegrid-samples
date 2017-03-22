@@ -29,6 +29,17 @@ class Grid {
 	}
 
 	/**
+	 * Change all lights
+	 */
+	public function changeAll($settingsMap) {
+		for ($r=0; $r<count($this->lights); $r++) {
+			for ($c=0; $c<count($this->lights[$r]); $c++) {
+				$this->lights[$r][$c]->update($settingsMap);
+			}
+		}
+	}
+
+	/**
 	 * Change light settings for a column
 	 */
 	public function changeOne($x, $y, $settingsMap) {
